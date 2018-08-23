@@ -14,17 +14,17 @@ fi
 
 ##### train fasttext
 ./fasttext skipgram \
-  -input=$CORPUS \
-  -output=$OUTPUTDIR \
-  -dim=$VECTOR_SIZE \
-  -epoch=$MAX_ITER \
-  -lr=$LEARNING_RATE \
-  -ws=$WINDOW_SIZE \
-  -minCount=$VOCAB_MIN_COUNT \
-  -wordNgrams=$MAX_NGRAM_WORD \
-  -bucket=$N_BUCKETS \
-  -minn=$MIN_NGRAM_CHAR \
-  -maxn=$MAX_NGRAM_CHAR \
-  -t=$SAMPLING_THRESH \
-  -thread=$THREADS \
-  -verbose=$VERBOSE
+  -input $CORPUS \
+  -output $OUTPUTDIR \
+  -dim $VECTOR_SIZE \
+  -epoch $MAX_ITER \
+  -lr $LEARNING_RATE \
+  -ws $WINDOW_SIZE \
+  -minCount $VOCAB_MIN_COUNT \
+  -wordNgrams $MAX_NGRAM_WORD \
+  -bucket $N_BUCKETS \
+  -minn $MIN_NGRAM_CHAR \
+  -maxn $MAX_NGRAM_CHAR \
+  -t $SAMPLING_THRESH \
+  -thread $THREADS \
+  -verbose $VERBOSE
