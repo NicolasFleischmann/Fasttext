@@ -1,7 +1,7 @@
 version: "2"
 services:
   app:
-    image: registry.gitlab.com/deepset-ai/open-source/fasttext-embeddings-de
+    image: registry.gitlab.com/deepset-ai/open-source/fasttext
     build: .
     command: bash -c "cd /home/docker/code/ && ./train_fasttext.sh"
     network_mode: "bridge"
