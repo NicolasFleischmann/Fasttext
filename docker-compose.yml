@@ -5,26 +5,26 @@ services:
     build: .
     command: bash -c "cd /home/docker/code/ && ./train_fasttext.sh"
     network_mode: "bridge"
-    container_name: "glove"
+    container_name: "fasttext"
     environment:
-      CORPUS: input/full_corpus.txt
+      CORPUS: input/processed/full_corpus.txt
       CORPUS_TYPE: custom
       WIKI_DUMP: dewiki-latest-pages-articles.xml.bz2
       WIKI_PREFIX: https://dumps.wikimedia.org/dewiki/latest/
       DOWNLOAD_WIKI: "false"
       OUTPUTDIR: output
-      VERBOSE: 2
+      VERBOSE: 3
       VOCAB_MIN_COUNT: 10
       VECTOR_SIZE: 100
-      MAX_ITER: 10
+      MAX_ITER: 5
       THREADS: 8
       WINDOW_SIZE: 5
       MAX_NGRAM_WORD: 1
-      MAX_NGRAM_CHAR: 0
-      MIN_NGRAM_CHAR: 0
+      MAX_NGRAM_CHAR: 6
+      MIN_NGRAM_CHAR: 3
       N_BUCKETS: 2000000
       SAMPLING_THRESH: 0.0001
-      LEARNING_RATE: 0.1
+      LEARNING_RATE: 0.05
     volumes:
-      - ../custom-embeddings/data/corpus:/home/docker/code/input
-      - ../custom-embeddings/data/embeddings/word2vec:/home/docker/code/output
+      - ../../data/corpus:/home/docker/code/input
+      - ../../data/embeddings/word2vec:/home/docker/code/output
