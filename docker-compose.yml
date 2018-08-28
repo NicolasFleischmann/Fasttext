@@ -24,7 +24,7 @@ services:
       MIN_NGRAM_CHAR: 3
       N_BUCKETS: 2000000
       SAMPLING_THRESH: 0.0001
-      LEARNING_RATE: 0.1
+      LEARNING_RATE: 0.05
     volumes:
       - ../../data/corpus/processed:/home/docker/code/input
-      - ../../data/embeddings/word2vec:/home/docker/code/output
+      - ../../data/embeddings/fasttext:/home/docker/code/output
