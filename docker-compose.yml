@@ -7,7 +7,7 @@ services:
     network_mode: "bridge"
     container_name: "fasttext"
     environment:
-      CORPUS: input/full_corpus.txt
+      CORPUS: input/small_corpus_int.txt
       CORPUS_TYPE: custom
       WIKI_DUMP: dewiki-latest-pages-articles.xml.bz2
       WIKI_PREFIX: https://dumps.wikimedia.org/dewiki/latest/

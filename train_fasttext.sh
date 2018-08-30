@@ -12,6 +12,7 @@ then
     python3 process_wikipedia.py $WIKI_DUMP $CORPUS
 fi
 
+OUTPUTDIR="$OUTPUTDIR/model"
 ##### train fasttext
 ./fasttext skipgram \
   -input $CORPUS \
