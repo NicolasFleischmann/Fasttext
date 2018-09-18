@@ -1,4 +1,5 @@
-#Dockerized training of fasttext embeddings
+##Dockerized training of fasttext embeddings
+
 Fasttext embeddings are especially useful since you can obtain vectors even for out-of-vocabulary words, 
 meaning words not seen at training time. 
 
@@ -7,6 +8,7 @@ meaning words not seen at training time.
 2. run `docker-compose -f docker-compose-wiki.yml up`
 3. trained model files are in folder "output"    
     `model.vec` is a word + embedding combination, in standard word2vec format.
+    
     `model.bin` can be loaded as fastText model for *out-of-vocab* words. 
     Explanation for installing fastText python version: https://github.com/facebookresearch/fastText/tree/master/python
     
@@ -18,6 +20,7 @@ Full documentation on preprocessing: https://github.com/facebookresearch/fastTex
 4. run `docker-compose up`
 5. trained model files are in folder "output"    
     `model.vec` is a word + embedding combination, in standard word2vec format.
+    
     `model.bin` can be loaded as fastText model for *out-of-vocab* words. 
     Explanation for installing fastText python version: https://github.com/facebookresearch/fastText/tree/master/python
     
