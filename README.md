@@ -1,4 +1,4 @@
-##Dockerized training of fasttext embeddings
+# Dockerized training of fasttext embeddings
 
 Fasttext embeddings are especially useful since you can obtain vectors even for out-of-vocabulary words, 
 meaning words not seen at training time. 
