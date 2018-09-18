@@ -12,11 +12,10 @@ then
     python3 process_wikipedia.py $WIKI_DUMP $CORPUS
 fi
 
-OUTPUTDIR="$OUTPUTDIR/model"
 ##### train fasttext
 ./fasttext skipgram \
   -input $CORPUS \
-  -output $OUTPUTDIR \
+  -output "$OUTPUTDIR/model" \
   -dim $VECTOR_SIZE \
   -epoch $MAX_ITER \
   -lr $LEARNING_RATE \
@@ -47,7 +46,7 @@ echo "{
     'LEARNING_RATE': $LEARNING_RATE,
     'MAX_NGRAM_WORD': $MAX_NGRAM_WORD,
     'MIN_NGRAM_CHAR': $MIN_NGRAM_CHAR,
-    '$MAX_NGRAM_CHAR': $MAX_NGRAM_CHAR
+    'MAX_NGRAM_CHAR': $MAX_NGRAM_CHAR
   },
   'notes': '$META_NOTES'
 }" > $OUTPUTDIR/word_emb.meta

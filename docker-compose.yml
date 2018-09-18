@@ -8,7 +8,7 @@ services:
     container_name: "fasttext"
     environment:
       # ** INPUT / OUTPUT DATA **
-      CORPUS: input/small_corpus_int.txt
+      CORPUS: input/full_corpus.txt
       #currently: only type "text" (plain text file with tokens separated by space)
       CORPUS_TYPE: custom
       OUTPUTDIR: output
@@ -18,7 +18,7 @@ services:
       # Dimensionality of word embedding
       VECTOR_SIZE: 300
       # Maximum number of training iterations (= epochs)
-      MAX_ITER: 50
+      MAX_ITER: 15
       # Number of words considered as a "local context" into both directions of the current target word
       # fasttext with skipgram implementation will predict a word out of this window using the "target" word
       WINDOW_SIZE: 5
@@ -27,16 +27,16 @@ services:
       MIN_NGRAM_CHAR: 3
       N_BUCKETS: 2000000
       SAMPLING_THRESH: 0.0001
-      LEARNING_RATE: 0.05
+      LEARNING_RATE: 0.01
       # ** RUNTIME SETTINGS**
       # Verbosity of logging (only increase for debugging)
       VERBOSE: 3
-      THREADS: 16
+      THREADS: 7
       # ** META INFORMATION **
       #(will be stored after training in "word_emb.meta" file. Useful for inspecting, comparing and deploying models)
       TEXT_TYPE: "lemmas_no_stopwords"
       TOKEN_SPACER: "__"
       META_NOTES: "Trained on c3.4xlarge"
     volumes:
-      - ../../data/corpus/processed:/home/docker/code/input
-      - ../../data/embeddings/fasttext:/home/docker/code/output
+        - ../data/input:/home/docker/code/input
+        - ../data/output:/home/docker/code/output
