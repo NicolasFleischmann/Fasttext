@@ -33,7 +33,7 @@ fi
 VOCAB_SIZE=$(cat $OUTPUTDIR/model.vec | wc -l)
 echo '{
   "alias": "fasttext",
-  "embeddings_filename": "model.vec",
+  "embeddings_filename": "model.bin",
   "vocab_filename": "None",
   "input_field": "$TEXT_TYPE",
   "token_spacer": "$TOKEN_SPACER",
