@@ -9,7 +9,7 @@ services:
     environment:
       # ** INPUT / OUTPUT DATA **
       CORPUS: input/full_corpus.txt
-      #currently: only type "text" (plain text file with tokens separated by space)
+      #currently: only type "text" (plain text file with tokens separated by space, documents separated by "\n")
       CORPUS_TYPE: custom
       OUTPUTDIR: output
       # ** MODEL PARAMETERS **

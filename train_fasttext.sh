@@ -33,9 +33,9 @@ fi
 VOCAB_SIZE=$(cat $OUTPUTDIR/model.vec | wc -l)
 DATE=$(date +%Y-%m-%d)
 
-echo '{
+echo "{
   \"alias\": \"fasttext\",
-  \"embeddings_filename\": \"model.vec\",
+  \"embeddings_filename\": \"model.bin\",
   \"vocab_filename\": \"None\",
   \"input_field\": \"$TEXT_TYPE\",
   \"token_spacer\": \"$TOKEN_SPACER\",
@@ -52,4 +52,4 @@ echo '{
   },
   \"train_date\": $DATE,
   \"notes\": \"$META_NOTES\"
-}' > $OUTPUTDIR/word_emb.meta
+}" > $OUTPUTDIR/word_emb.meta
