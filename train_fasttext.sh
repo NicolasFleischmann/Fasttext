@@ -31,22 +31,25 @@ fi
 
 ## write model meta file
 VOCAB_SIZE=$(cat $OUTPUTDIR/model.vec | wc -l)
+DATE=$(date +%Y-%m-%d)
+
 echo '{
-  "alias": "fasttext",
-  "embeddings_filename": "model.vec",
-  "vocab_filename": "None",
-  "input_field": "$TEXT_TYPE",
-  "token_spacer": "$TOKEN_SPACER",
-  "vocab_size": $VOCAB_SIZE,
-  "train_params": {
-    "VOCAB_MIN_COUNT": $VOCAB_MIN_COUNT,
-    "VECTOR_SIZE": $VECTOR_SIZE,
-    "MAX_ITER": $MAX_ITER,
-    "WINDOW_SIZE": $WINDOW_SIZE,
-    "LEARNING_RATE": $LEARNING_RATE,
-    "MAX_NGRAM_WORD": $MAX_NGRAM_WORD,
-    "MIN_NGRAM_CHAR": $MIN_NGRAM_CHAR,
-    "MAX_NGRAM_CHAR": $MAX_NGRAM_CHAR
+  \"alias\": \"fasttext\",
+  \"embeddings_filename\": \"model.vec\",
+  \"vocab_filename\": \"None\",
+  \"input_field\": \"$TEXT_TYPE\",
+  \"token_spacer\": \"$TOKEN_SPACER\",
+  \"vocab_size\": $VOCAB_SIZE,
+  \"train_params\": {
+    \"VOCAB_MIN_COUNT\": $VOCAB_MIN_COUNT,
+    \"VECTOR_SIZE\": $VECTOR_SIZE,
+    \"MAX_ITER\": $MAX_ITER,
+    \"WINDOW_SIZE\": $WINDOW_SIZE,
+    \"LEARNING_RATE\": $LEARNING_RATE,
+    \"MAX_NGRAM_WORD\": $MAX_NGRAM_WORD,
+    \"MIN_NGRAM_CHAR\": $MIN_NGRAM_CHAR,
+    \"MAX_NGRAM_CHAR\": $MAX_NGRAM_CHAR
   },
-  "notes": "$META_NOTES"
+  \"train_date\": $DATE,
+  \"notes\": \"$META_NOTES\"
 }' > $OUTPUTDIR/word_emb.meta
