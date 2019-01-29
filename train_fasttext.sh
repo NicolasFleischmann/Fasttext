@@ -50,6 +50,6 @@ echo "{
     \"MIN_NGRAM_CHAR\": $MIN_NGRAM_CHAR,
     \"MAX_NGRAM_CHAR\": $MAX_NGRAM_CHAR
   },
-  \"train_date\": $DATE,
+  \"train_date\": \"$DATE\",
   \"notes\": \"$META_NOTES\"
 }" > $OUTPUTDIR/word_emb.meta
