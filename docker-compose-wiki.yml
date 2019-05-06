@@ -9,8 +9,14 @@ services:
     environment:
       # ** INPUT / OUTPUT DATA **
       CORPUS: input/wiki.de.txt
-      DOWNLOAD_WIKI: "true" #downloads whole corpus. If corpus already extracted and processed (working wiki.de.txt file) you can set this to false
       CORPUS_TYPE: wiki
+      #For CORPUS_TYPE= "wiki", you have two options. Either supply the wiki dump as a mounted file OR download it by
+      # specifying the options in the next lines
+      DOWNLOAD_WIKI: "true" # "true" # cannot supply boolean with docker compose
+      # name of the wiki dump file to download
+      WIKI_DUMP: dewiki-latest-pages-articles.xml.bz2
+      # URL of the wiki dump (Download will use concatenated string of WIKI_PREFIX and WIKI_DUMP
+      WIKI_PREFIX: https://dumps.wikimedia.org/dewiki/latest/
       OUTPUTDIR: output
       # ** MODEL PARAMETERS **
       # Min occurences of a token to be considered in the model vocab
